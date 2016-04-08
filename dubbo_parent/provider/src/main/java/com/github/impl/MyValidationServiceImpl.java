@@ -1,7 +1,7 @@
 package com.github.impl;
 
 import com.github.dto.ValidationDTO;
-import com.github.service.MyValidationService;
+import com.github.rest.MyValidationService;
 
 public class MyValidationServiceImpl implements MyValidationService {
 

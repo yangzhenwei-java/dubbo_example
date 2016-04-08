@@ -1,4 +1,4 @@
-package com.github.service;
+package com.github.rest;
 
 import javax.ws.rs.Path;
 

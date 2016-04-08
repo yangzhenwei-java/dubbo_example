@@ -10,7 +10,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.github.service.MyValidationService;
+import com.github.rest.MyValidationService;
 
 public class ValidationDTO{
 
