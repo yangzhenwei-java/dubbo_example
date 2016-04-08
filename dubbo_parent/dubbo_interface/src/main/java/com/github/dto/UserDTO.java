@@ -1,4 +1,4 @@
-package cn.creditease.dto;
+package com.github.dto;
 
 import java.io.Serializable;
 

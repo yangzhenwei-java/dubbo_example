@@ -1,4 +1,4 @@
-package cn.creditease.listener;
+package com.github.listener;
 
 public interface CallBackListener {
 

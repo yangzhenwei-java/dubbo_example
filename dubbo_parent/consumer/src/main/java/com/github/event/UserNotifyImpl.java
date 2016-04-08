@@ -1,6 +1,7 @@
-package cn.creditease.event;
+package com.github.event;
 
-import cn.creditease.dto.UserDTO;
+import com.github.dto.UserDTO;
+import com.github.event.UserNotify;
 
 public class UserNotifyImpl implements UserNotify{
 	

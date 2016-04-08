@@ -15,9 +15,10 @@
 	<context:property-placeholder location="zookeeper.properties" />
 	<dubbo:application name="param_callback_demo"/>
 	<dubbo:registry address="${zookeeper.address}"/>
+	<dubbo:monitor protocol="registry" />
 	<!-- async 非阻塞实现并行调用，客户端不需要启动多线程即可完成并行调用多个远程服务，
 		相对多线程开销较小。 -->
 	<dubbo:reference id="userService"  
-		interface="cn.creditease.service.UserService" async="true"/>
+		interface="com.github.service.UserService" async="true"/>
 
 </beans>

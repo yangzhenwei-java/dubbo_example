@@ -14,10 +14,11 @@
 	<context:property-placeholder location="zookeeper.properties" />
 	<dubbo:application name="loadbalance_provider_demo"/>
 	<dubbo:registry address="${zookeeper.address}"/>
-	<dubbo:protocol name="dubbo"  port="20883"/>
-	<dubbo:service interface="cn.creditease.service.UserService" 
+	 <dubbo:monitor protocol="registry" />
+	<dubbo:protocol name="dubbo"  port="20883" host="${host}"/>
+	<dubbo:service interface="com.github.service.UserService" 
 				ref="userServiceImpl"/>
 	<bean id="userServiceImpl" 
-				class="cn.creditease.impl.UserServiceImpl"/>
+				class="com.github.impl.UserServiceImpl"/>
 	
 </beans>

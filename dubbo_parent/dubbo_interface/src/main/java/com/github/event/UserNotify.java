@@ -1,6 +1,6 @@
-package cn.creditease.event;
+package com.github.event;
 
-import cn.creditease.dto.UserDTO;
+import com.github.dto.UserDTO;
 
 public interface UserNotify {
 	

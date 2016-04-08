@@ -1,4 +1,4 @@
-package cn.creditease.impl;
+package com.github.impl;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -11,10 +11,9 @@ import org.springframework.stereotype.Service;
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.json.JSON;
 import com.alibaba.dubbo.rpc.RpcContext;
-
-import cn.creditease.dto.UserDTO;
-import cn.creditease.listener.CallBackListener;
-import cn.creditease.service.UserService;
+import com.github.dto.UserDTO;
+import com.github.listener.CallBackListener;
+import com.github.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -102,6 +101,6 @@ public class UserServiceImpl implements UserService{
 
   }
    
-
+	
 
 }

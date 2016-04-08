@@ -14,10 +14,11 @@
 	
 	<!-- name为必填项,一般为项目的名字  -->
 	<dubbo:application name="quict_start_demo"/>
+	<dubbo:monitor protocol="registry" />
 	<!-- id: 服务引用bean的id，方便spring容器使用（必填）
 		 interface：服务接口名（必填  ）
 	-->
 	<dubbo:reference id="userService"  
-		interface="cn.creditease.service.UserService"  
+		interface="com.github.service.UserService"  
 		url="dubbo://127.0.0.1:20880"/>
 </beans>

@@ -16,16 +16,17 @@
 	<!-- 注册中心服务器地址，如果地址没有端口缺省为9090，同一集群内的多个地址用逗号分隔，
 	如：ip:port,ip:port，不同集群的注册中心，请配置多个<dubbo:registry>标签 -->
 	<dubbo:registry address="${zookeeper.address}"/>
+	<dubbo:monitor protocol="registry" />
 	<!--  -->
 	<dubbo:reference id="userService_1"  
-		interface="cn.creditease.service.UserService" version="1.0.0"/>
+		interface="com.github.service.UserService" version="1.0.0"/>
 	<dubbo:reference id="userService_2"  
-		interface="cn.creditease.service.UserService" version="2.0.0"/>
+		interface="com.github.service.UserService" version="2.0.0"/>
 	<dubbo:reference id="userService_3"  
-		interface="cn.creditease.service.UserService" version="3.0.0"/>
+		interface="com.github.service.UserService" version="3.0.0"/>
 	<dubbo:reference id="userService_4"  
-		interface="cn.creditease.service.UserService" version="4.0.0"/>
+		interface="com.github.service.UserService" version="4.0.0"/>
 	<dubbo:reference id="userService_5"  
-		interface="cn.creditease.service.UserService" version="5.0.0"/>
+		interface="com.github.service.UserService" version="5.0.0"/>
 	
 </beans>

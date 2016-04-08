@@ -15,15 +15,16 @@
 
 	<dubbo:application name="load_balance_demo" />
 	<dubbo:registry address="${zookeeper.address}"/>
+	<dubbo:monitor protocol="registry" />
 	<!-- loadbalance默认是random, 还可以有roundrobin、
 		leastactive、consistenthash -->
 	<!-- <dubbo:reference id="userService" 
-		interface="cn.creditease.service.UserService"/> -->
+		interface="com.github.service.UserService"/> -->
 	<!-- <dubbo:reference id="userService" 
-		interface="cn.creditease.service.UserService" 
+		interface="com.github.service.UserService" 
 		loadbalance="roundrobin"/> -->
 	<dubbo:reference id="userService" 
-	interface="cn.creditease.service.UserService"
+	interface="com.github.service.UserService"
 		loadbalance="consistenthash" />
 
 </beans>

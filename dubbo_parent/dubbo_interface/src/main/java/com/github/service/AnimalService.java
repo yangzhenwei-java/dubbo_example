@@ -1,4 +1,4 @@
-package cn.creditease.service;
+package com.github.service;
 
 public interface AnimalService {
 	

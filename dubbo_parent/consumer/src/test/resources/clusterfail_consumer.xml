@@ -13,16 +13,17 @@
 		http://code.alibabatech.com/schema/dubbo http://fk.test.beebank.com/dubbo.xsd ">
 	<context:property-placeholder location="zookeeper.properties" />
 	<dubbo:application name="cluster_fail_demo" />
+	<dubbo:monitor protocol="registry" />
 	<!-- 缺省主机IP查找顺序： 通过LocalHost.getLocalHost()获取本机地址。
 		 如果是127.*等loopback地址，则扫描各网卡，获取网卡IP。 -->
-	<dubbo:protocol host="192.168.1.102" />
+	<dubbo:protocol host="${host}" />
 	<!-- 注册中心服务器地址，如果地址没有端口缺省为9090，同一集群内的多个地址用逗号分隔， 
 		如：ip:port,ip:port，不同集群的注册中心，请配置多个<dubbo:registry>标签 -->
 	<dubbo:registry address="${zookeeper.address}" />
 	<!-- cluster可选failover/failfast/failsafe/failback/forking
 		 默认是failover。 retries默认为2，第一次失败之后重新访问两次 -->
 	<dubbo:reference id="userService" 
-		interface="cn.creditease.service.UserService"
+		interface="com.github.service.UserService"
 		cluster="failsafe" retries="2" />
 
 </beans>

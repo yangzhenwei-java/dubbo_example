@@ -14,9 +14,10 @@
 	
 	<context:property-placeholder location="zookeeper.properties" />
 	<dubbo:application name="event_notice_demo"/>
+	<dubbo:monitor protocol="registry" />
 	<dubbo:registry address="${zookeeper.address}"/>
-    <bean id="notify" class="cn.creditease.event.UserNotifyImpl"/>
-     <dubbo:reference id="userService" interface="cn.creditease.service.UserService">
+    <bean id="notify" class="com.github.event.UserNotifyImpl"/>
+     <dubbo:reference id="userService" interface="com.github.service.UserService">
      	<dubbo:method name="get"  onthrow="notify.onthrow" onreturn="notify.onreturn"/>
      </dubbo:reference>
 </beans>

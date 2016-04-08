@@ -2,12 +2,13 @@ package provider;
 
 import java.io.IOException;
 
-import cn.creditease.impl.UserServiceImpl;
-import cn.creditease.service.UserService;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.ServiceConfig;
+import com.github.impl.UserServiceImpl;
+import com.github.service.UserService;
+
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -239,4 +240,20 @@ public class ProviderServerTest {
 		service.export();
 		System.in.read();
 	}
+	
+	
+	/**
+	 * rest风格
+	 * 
+	 * @throws IOException
+	 */
+	@Test
+	public void restServer() throws IOException {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+				"rest_provider.xml");
+		context.start();
+
+		System.in.read();
+	}
+	
 }

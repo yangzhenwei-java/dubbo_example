@@ -1,6 +1,6 @@
-package cn.creditease.impl;
+package com.github.impl;
 
-import cn.creditease.service.AnimalService;
+import com.github.service.AnimalService;
 
 public class HorseServiceImpl implements AnimalService {
 

@@ -5,17 +5,27 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-import com.alibaba.dubbo.config.*;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.creditease.dto.UserDTO;
-import cn.creditease.listener.CallBackListener;
-import cn.creditease.service.AnimalService;
-import cn.creditease.service.UserService;
-
+import com.alibaba.dubbo.config.ApplicationConfig;
+import com.alibaba.dubbo.config.ReferenceConfig;
+import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.rpc.RpcContext;
+import com.github.dto.StudentDTO;
+import com.github.dto.UserDTO;
+import com.github.listener.CallBackListener;
+import com.github.rest.StudentService;
+import com.github.service.AnimalService;
+import com.github.service.UserService;
 
 public class ConsumerTest {
 	/**
@@ -209,6 +219,47 @@ public class ConsumerTest {
 		UserService userService = reference.get(); // 注意：此代理对象内部封装了所有通讯细节，对象较重，请缓存复用
 		System.err.println(userService.get(1));
 
+	}
+	
+	
+	/**
+	 * 调用rest(一)
+	 * @throws IOException 
+	 */
+	@Test
+	public void restful1() throws IOException{
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+				"rest_consumer.xml");
+		StudentDTO dto = new StudentDTO();
+		dto.setName("zhangsan");
+		dto.setStuNo("123456");
+		context.start();
+		StudentService service = (StudentService) context.getBean("studentService");
+		service.registerUser(dto);
+		System.in.read();
+	}
+	
+	
+	/**
+	 * 调用rest(二)
+	 */
+	@Test
+	public void restful2(){
+		StudentDTO dto = new StudentDTO();
+		dto.setName("zhangsan");
+		dto.setStuNo("123456");
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://172.16.153.156:30000/service/student/register");
+        Response response = target.request().post(Entity.entity(dto, MediaType.APPLICATION_JSON_TYPE));
+        try {
+            if (response.getStatus() != 200) {
+                throw new RuntimeException("Failed with HTTP error code : " + response.getStatus());
+            }
+            System.out.println("Successfully got result: " + response.readEntity(String.class));
+        } finally {
+            response.close();
+            client.close();
+        }
 	}
 
 }

@@ -13,13 +13,14 @@
 		http://code.alibabatech.com/schema/dubbo http://fk.test.beebank.com/dubbo.xsd ">
 	<context:property-placeholder location="zookeeper.properties" />
 	<dubbo:application name="group_provider_demo"/>
-	<dubbo:protocol name="dubbo"  port="20887" />
+	<dubbo:protocol name="dubbo"  port="20887" host="${host}" />
 	<dubbo:registry address="${zookeeper.address}"/>
+	 <dubbo:monitor protocol="registry" />
 	<!-- <dubbo:protocol name="dubbo"  port="20887"/> -->
-	<dubbo:service interface="cn.creditease.service.AnimalService" 
+	<dubbo:service interface="com.github.service.AnimalService" 
 		group="horse" ref="horseServiceImpl"/>
-	<dubbo:service interface="cn.creditease.service.AnimalService" 
+	<dubbo:service interface="com.github.service.AnimalService" 
 		group="tiger" ref="tigerServiceImpl"/>
-	<bean id="horseServiceImpl" class="cn.creditease.impl.HorseServiceImpl"/>
-	<bean id="tigerServiceImpl" class="cn.creditease.impl.TigerServiceImpl"/>
+	<bean id="horseServiceImpl" class="com.github.impl.HorseServiceImpl"/>
+	<bean id="tigerServiceImpl" class="com.github.impl.TigerServiceImpl"/>
 </beans>
