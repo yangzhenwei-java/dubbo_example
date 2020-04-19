@@ -8,7 +8,6 @@
 	<packaging>jar</packaging>
 
 	<name>dubbo_interface</name>
-	<url>http://nexus.hrbbwx.com/nexus/content/repositories/central</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -51,16 +50,4 @@
 			<version>0.1</version>
 		</dependency>
 	</dependencies>
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Nexus Release Repository</name>
-			<url>http://nexus.hrbbwx.com/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Nexus Snapshot Repository</name>
-			<url>http://nexus.hrbbwx.com/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 </project>
