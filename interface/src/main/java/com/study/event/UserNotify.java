@@ -1,6 +1,6 @@
-package cn.creditease.event;
+package com.study.event;
 
-import cn.creditease.dto.UserDTO;
+import com.study.dto.UserDTO;
 
 public interface UserNotify {
 	

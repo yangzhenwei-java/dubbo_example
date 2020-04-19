@@ -10,10 +10,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.creditease.dto.UserDTO;
-import cn.creditease.listener.CallBackListener;
-import cn.creditease.service.AnimalService;
-import cn.creditease.service.UserService;
+import com.study.dto.UserDTO;
+import com.study.listener.CallBackListener;
+import com.study.service.AnimalService;
+import com.study.service.UserService;
 
 import com.alibaba.dubbo.rpc.RpcContext;
 

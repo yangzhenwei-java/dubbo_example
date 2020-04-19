@@ -11,9 +11,9 @@
 	<dubbo:registry address="${zookeeper.address}" />
 	<!-- async 非阻塞实现并行调用，客户端不需要启动多线程即可完成并行调用多个远程服务，
 		相对多线程开销较小。 -->
-	<dubbo:reference id="userService" interface="cn.creditease.service.UserService"
+	<dubbo:reference id="userService" interface="com.study.service.UserService"
 		async="true" />
 	<dubbo:reference id="animalService"
-		interface="cn.creditease.service.AnimalService" 
+		interface="com.study.service.AnimalService"
 		group="*" async="true" />
 </beans>

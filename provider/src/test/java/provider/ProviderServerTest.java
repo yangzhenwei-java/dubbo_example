@@ -2,8 +2,8 @@ package provider;
 
 import java.io.IOException;
 
-import cn.creditease.impl.UserServiceImpl;
-import cn.creditease.service.UserService;
+import com.study.impl.UserServiceImpl;
+import com.study.service.UserService;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;

@@ -1,4 +1,4 @@
-package cn.creditease.dto;
+package com.study.dto;
 
 import java.io.Serializable;
 

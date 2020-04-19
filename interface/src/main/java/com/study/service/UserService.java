@@ -1,10 +1,10 @@
-package cn.creditease.service;
+package com.study.service;
 
 
 import java.util.List;
 
-import cn.creditease.dto.UserDTO;
-import cn.creditease.listener.CallBackListener;
+import com.study.dto.UserDTO;
+import com.study.listener.CallBackListener;
 
 public interface UserService {
 	

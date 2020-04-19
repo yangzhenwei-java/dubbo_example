@@ -1,4 +1,4 @@
-package cn.creditease.service;
+package com.study.service;
 
 public interface SortService {
 	
