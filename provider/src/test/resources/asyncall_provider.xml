@@ -15,6 +15,7 @@
                    group="horse" ref="horseServiceImpl"/>
     <dubbo:service interface="com.study.service.AnimalService"
                    group="tiger" ref="tigerServiceImpl"/>
+
     <bean id="userServiceImpl" class="com.study.impl.UserServiceImpl"/>
     <bean id="horseServiceImpl" class="com.study.impl.HorseServiceImpl"/>
     <bean id="tigerServiceImpl" class="com.study.impl.TigerServiceImpl"/>

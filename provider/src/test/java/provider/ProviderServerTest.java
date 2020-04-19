@@ -1,6 +1,7 @@
 package provider;
 
 import java.io.IOException;
+import java.util.UUID;
 
 import com.study.impl.UserServiceImpl;
 import com.study.service.UserService;
@@ -238,5 +239,12 @@ public class ProviderServerTest {
 		//暴露服务
 		service.export();
 		System.in.read();
+	}
+
+
+
+	@Test
+	public void uuidTest(){
+		System.out.println(UUID.randomUUID().toString());
 	}
 }
