@@ -10,7 +10,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>consumer</module>
-        <module>dubbo_interface</module>
+        <module>interface</module>
         <module>provider</module>
     </modules>
     <properties>
